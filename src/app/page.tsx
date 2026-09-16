@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import MotoGallery from "@/components/MotoGallery";
 import Stats from "@/components/Stats";
 import HowItWorks from "@/components/HowItWorks";
 import Catalog from "@/components/Catalog";
@@ -14,6 +15,7 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
+      <MotoGallery />
       <Stats />
       <HowItWorks />
       <Catalog />

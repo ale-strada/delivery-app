@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { models } from "@/data/content";
 
 const currency = (n: number) =>
@@ -5,44 +6,49 @@ const currency = (n: number) =>
 
 export default function Catalog() {
   return (
-    <section id="modelos" className="bg-asphalt text-paper">
+    <section id="modelos" className="bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex items-end justify-between gap-6 flex-wrap">
-          <h2 className="font-display font-800 uppercase text-4xl sm:text-5xl max-w-md">
+          <h2 className="font-display font-700 text-4xl sm:text-5xl text-ink max-w-md">
             Modelos disponibles
           </h2>
-          <p className="text-paper/50 text-sm max-w-xs">
+          <p className="text-ink-soft text-sm max-w-xs">
             Precios de referencia. El anticipo se abona en 3 pagos antes de
             retirar la moto.
           </p>
         </div>
 
-        <div className="mt-12 divide-y divide-paper/15 border-t border-b border-paper/15">
+        <div className="mt-12 grid sm:grid-cols-3 gap-6">
           {models.map((m) => (
             <div
               key={m.id}
-              className="py-6 grid sm:grid-cols-[1fr_auto_auto_auto] gap-4 sm:gap-10 items-center"
+              className="bg-cream rounded-2xl p-7 flex flex-col"
             >
-              <div>
-                <p className="text-paper/50 text-xs uppercase tracking-wide">
-                  {m.brand}
-                </p>
-                <p className="font-display font-700 text-2xl">{m.name}</p>
+              <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-5">
+                <Image src="/icon.png" alt="" width={40} height={40} className="w-10 h-10 object-contain" />
               </div>
-              <div className="text-sm">
-                <p className="text-paper/50">Precio contado</p>
-                <p className="font-medium">{currency(m.cashPrice)}</p>
+              <p className="text-ink-soft text-xs uppercase tracking-wide font-medium">
+                {m.brand}
+              </p>
+              <p className="font-display font-700 text-2xl text-ink">{m.name}</p>
+
+              <div className="mt-5 pt-5 border-t border-line space-y-3 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-ink-soft">Precio contado</span>
+                  <span className="font-medium">{currency(m.cashPrice)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-ink-soft">Anticipo</span>
+                  <span className="font-medium">
+                    {m.downPaymentInstallments.count}x{" "}
+                    {currency(m.downPaymentInstallments.amount)}
+                  </span>
+                </div>
               </div>
-              <div className="text-sm">
-                <p className="text-paper/50">Anticipo</p>
-                <p className="font-medium">
-                  {m.downPaymentInstallments.count} pagos de{" "}
-                  {currency(m.downPaymentInstallments.amount)}
-                </p>
-              </div>
-              <div className="text-sm sm:text-right">
-                <p className="text-paper/50">Cuota semanal</p>
-                <p className="font-medium text-lime">
+
+              <div className="mt-5 pt-5 border-t border-line">
+                <p className="text-ink-soft text-sm">Cuota semanal</p>
+                <p className="font-display font-700 text-2xl text-amber">
                   {currency(m.weeklyInstallment)}
                 </p>
               </div>

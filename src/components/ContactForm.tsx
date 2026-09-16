@@ -23,55 +23,55 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contacto" className="bg-asphalt text-paper">
+    <section id="contacto" className="bg-ink text-cream">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-md">
-          <h2 className="font-display font-800 uppercase text-4xl sm:text-5xl">
+          <h2 className="font-display font-700 text-4xl sm:text-5xl">
             Empezá hoy
           </h2>
-          <p className="mt-3 text-paper/60 text-sm">
+          <p className="mt-3 text-cream/60 text-sm">
             Sin costo ni compromiso hasta que firmás tu plan. Te contactamos
             por WhatsApp.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-4">
             <div>
-              <label className="block text-sm text-paper/60 mb-1">
+              <label className="block text-sm text-cream/60 mb-1.5">
                 Nombre
               </label>
               <input
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-transparent border-b border-paper/30 py-2 outline-none focus:border-lime transition-colors"
+                className="w-full bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber transition-shadow placeholder:text-cream/30"
                 placeholder="Tu nombre"
               />
             </div>
             <div>
-              <label className="block text-sm text-paper/60 mb-1">
+              <label className="block text-sm text-cream/60 mb-1.5">
                 ¿En qué app trabajás?
               </label>
               <input
                 value={app}
                 onChange={(e) => setApp(e.target.value)}
-                className="w-full bg-transparent border-b border-paper/30 py-2 outline-none focus:border-lime transition-colors"
+                className="w-full bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber transition-shadow placeholder:text-cream/30"
                 placeholder="PedidosYa, Rappi, Uber..."
               />
             </div>
             <div>
-              <label className="block text-sm text-paper/60 mb-1">
+              <label className="block text-sm text-cream/60 mb-1.5">
                 Ciudad
               </label>
               <input
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="w-full bg-transparent border-b border-paper/30 py-2 outline-none focus:border-lime transition-colors"
+                className="w-full bg-white/5 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber transition-shadow placeholder:text-cream/30"
                 placeholder="Córdoba, Buenos Aires..."
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-lime text-asphalt px-6 py-3 font-medium hover:bg-paper transition-colors"
+              className="w-full bg-amber text-white rounded-full px-6 py-3.5 font-semibold hover:bg-amber-dark transition-colors"
             >
               Continuar por WhatsApp
             </button>
