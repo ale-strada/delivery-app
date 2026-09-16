@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+	--color-asphalt: #15181d;
+	--color-concrete: #edebe4;
+	--color-paper: #faf9f6;
+	--color-lime: #d7f226;
+	--color-ink: #15181d;
+	--color-line: #cfccc2;
+
+	--font-display: "Arial Narrow", "Segoe UI", sans-serif;
+	--font-body: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--color-concrete);
+	color: var(--color-ink);
+	font-family: var(--font-body);
+}
+
+.font-display {
+	font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	* {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
